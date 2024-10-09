@@ -1,0 +1,14 @@
+<ActionBar [title]="clothing.name"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Image [src]="clothing.imageUrl" width="200" height="200" class="rounded-lg mb-4"></Image>
+    <Label [text]="clothing.name" class="text-2xl font-bold mb-2"></Label>
+    <Label [text]="'Size: ' + clothing.size" class="text-lg mb-2"></Label>
+    <Label [text]="'Condition: ' + clothing.condition" class="text-lg mb-2"></Label>
+    <Label [text]="'Description: ' + clothing.description" class="text-lg mb-2"></Label>
+    <Label [text]="'Owner: ' + clothing.ownerName" class="text-lg mb-2"></Label>
+    <Button text="Request Exchange" class="btn btn-primary mb-2" (tap)="onRequestExchange()"></Button>
+    <Button text="Chat with Owner" class="btn btn-secondary" (tap)="onChatWithOwner()"></Button>
+  </StackLayout>
+</ScrollView>

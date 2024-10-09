@@ -1,0 +1,15 @@
+<ActionBar [title]="'Chat with ' + receiverName"></ActionBar>
+
+<GridLayout rows="*, auto">
+  <ListView row="0" [items]="messages">
+    <ng-template let-message="item">
+      <StackLayout [class]="message.senderId === currentUserId ? 'bg-blue-200 self-end' : 'bg-gray-200'" class="p-2 m-2 rounded">
+        <Label [text]="message.text" textWrap="true"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  <GridLayout row="1" columns="*, auto" class="p-2">
+    <TextField col="0" [(ngModel)]="newMessage" hint="Type a message" class="input"></TextField>
+    <Button col="1" text="Send" (tap)="onSendMessage()" class="btn btn-primary"></Button>
+  </GridLayout>
+</GridLayout>

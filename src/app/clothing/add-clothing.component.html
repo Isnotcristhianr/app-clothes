@@ -1,0 +1,13 @@
+<ActionBar title="Add Clothing"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Image [src]="imageUrl" width="200" height="200" class="rounded-lg mb-4"></Image>
+    <Button text="Select Image" (tap)="onSelectImage()" class="btn btn-secondary mb-2"></Button>
+    <TextField [(ngModel)]="newClothing.name" hint="Name" class="input mb-2"></TextField>
+    <TextField [(ngModel)]="newClothing.size" hint="Size" class="input mb-2"></TextField>
+    <TextField [(ngModel)]="newClothing.condition" hint="Condition" class="input mb-2"></TextField>
+    <TextView [(ngModel)]="newClothing.description" hint="Description" class="input mb-2"></TextView>
+    <Button text="Add Clothing" (tap)="onAddClothing()" class="btn btn-primary"></Button>
+  </StackLayout>
+</ScrollView>

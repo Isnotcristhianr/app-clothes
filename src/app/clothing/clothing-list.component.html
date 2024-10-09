@@ -1,0 +1,20 @@
+<ActionBar title="Clothing Exchange">
+  <ActionItem text="Add" [nsRouterLink]="['/add']" ios.position="right"></ActionItem>
+  <ActionItem text="Logout" (tap)="onLogout()" ios.position="left"></ActionItem>
+</ActionBar>
+
+<GridLayout rows="auto, *">
+  <SearchBar row="0" hint="Search clothing" (textChange)="onSearch($event)"></SearchBar>
+  <ListView row="1" [items]="filteredClothingItems">
+    <ng-template let-item="item">
+      <GridLayout columns="auto, *" [nsRouterLink]="['/clothing', item.id]" class="p-4">
+        <Image col="0" [src]="item.imageUrl" width="50" height="50" class="rounded-full mr-2"></Image>
+        <StackLayout col="1">
+          <Label [text]="item.name" class="text-lg font-bold"></Label>
+          <Label [text]="'Size: ' + item.size" class="text-sm text-gray-500"></Label>
+          <Label [text]="'Owner: ' + item.ownerName" class="text-sm text-gray-500"></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
